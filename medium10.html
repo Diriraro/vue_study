@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Sample</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <hello></hello>
+      <hello></hello>
+      <hello></hello>
+      <hello></hello>
+    </div>
+
+    <script>
+      Vue.component('hello', {
+        template: '<h1>{{title}}<button @click="changeTitle">change</button> </h1>',
+        data: function() {
+          return {
+            title: 'ㅇㅎㅇㅎㅇ',
+            one: true,
+          }
+        },
+        methods: {
+          changeTitle: function() {
+            if(this.one){
+              this.title = 'changedddd'
+            }else{
+              this.title = 'ㅇㅎㅇㅎㅇ'
+            }
+            this.one = !this.one
+          },
+        }
+      })
+      new Vue({
+        el:'#app'
+      })
+    </script>
+  </body>
+</html>
